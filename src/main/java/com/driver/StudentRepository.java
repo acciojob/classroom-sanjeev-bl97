@@ -59,7 +59,11 @@ public class StudentRepository {
 
     public ArrayList<String> getAllStudents(){
 
-        return new ArrayList<>(s.keySet());
+        ArrayList<String>list = new ArrayList<>();
+        for (String st : s.keySet()){
+            list.add(st);
+        }
+        return list;
 
 
     }
