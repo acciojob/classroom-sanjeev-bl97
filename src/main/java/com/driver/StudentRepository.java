@@ -4,17 +4,20 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 
 @Repository
 public class StudentRepository {
 
-    HashMap<String,Student> s = new HashMap<>();;
-    HashMap<String,Teacher> t = new HashMap<>();;
-    HashMap<String,ArrayList<String>> st = new HashMap<>();;
+    HashMap<String,Student> s ;
+    HashMap<String,Teacher> t ;
+    HashMap<String,ArrayList<String>> st ;
 
-
+    public StudentRepository() {
+        s = new HashMap<>();
+        t = new HashMap<>();
+        st = new HashMap<>();
+    }
 
     public void addStudent(Student student){
         s.put(student.getName(),student);
@@ -57,11 +60,7 @@ public class StudentRepository {
 
     public List<String> getAllStudents(){
 
-        List<String> list = new ArrayList<>();
-        for (String st : s.keySet()){
-            list.add(st);
-        }
-        return list;
+        return new ArrayList<>(s.keySet());
 
 
     }
