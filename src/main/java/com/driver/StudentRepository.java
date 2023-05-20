@@ -29,13 +29,10 @@ public class StudentRepository {
     }
 
     public void addStudentTeacherPair(String teacher,String student){
-        if(t.containsKey(teacher) && s.containsKey(student)){
-            ArrayList<String> al = st.get(teacher);
-            if(al == null)
-                al = new ArrayList<>();
-            al.add(student);
-            st.put(teacher,al);
+        if(!st.containsKey(teacher)){
+           st.put(teacher,new ArrayList<>());
         }
+        st.get(teacher).add(student);
 
     }
 
