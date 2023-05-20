@@ -1,5 +1,9 @@
 package com.driver;
 
+import lombok.*;
+
+@Getter
+@Setter
 public class Student {
 
     private String name;

@@ -1,5 +1,10 @@
 package com.driver;
 
+
+import lombok.*;
+
+@Getter
+@Setter
 public class Teacher {
 
     private String name;
