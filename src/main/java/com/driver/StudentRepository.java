@@ -2,21 +2,19 @@ package com.driver;
 
 import org.springframework.stereotype.Repository;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 
 @Repository
 public class StudentRepository {
 
-    Map<String,Student> s;
-    Map<String,Teacher> t;
-    Map<String,ArrayList<String>> st;
+    HashMap<String,Student> s = new HashMap<>();;
+    HashMap<String,Teacher> t = new HashMap<>();;
+    HashMap<String,ArrayList<String>> st = new HashMap<>();;
 
-    public StudentRepository() {
-        s = new HashMap<>();
-        t = new HashMap<>();
-        st = new HashMap<>();
 
-    }
 
     public void addStudent(Student student){
         s.put(student.getName(),student);
@@ -59,7 +57,7 @@ public class StudentRepository {
 
     public List<String> getAllStudents(){
 
-        ArrayList<String> list = new ArrayList<>();
+        List<String> list = new ArrayList<>();
         for (String st : s.keySet()){
             list.add(st);
         }
@@ -73,9 +71,7 @@ public class StudentRepository {
         if(t.containsKey(teacher)) t.remove(teacher);
 
         if(st.containsKey(teacher)){
-            ArrayList<String> s = st.get(teacher);
-
-            for(String student : s)
+            for(String student : st.get(teacher))
                 s.remove(student);
 
             st.remove(teacher);

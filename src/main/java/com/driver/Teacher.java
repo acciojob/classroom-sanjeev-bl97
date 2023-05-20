@@ -10,6 +10,10 @@ public class Teacher {
 
     private int age;
 
+    public Teacher() {
+
+    }
+
     public Teacher(String name, int numberOfStudents, int age) {
         this.name = name;
         this.numberOfStudents = numberOfStudents;
