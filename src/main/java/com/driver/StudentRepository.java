@@ -50,16 +50,16 @@ public class StudentRepository {
 
     }
 
-    public ArrayList<String> getStudentsByTeacherName(String teacher){
+    public List<String> getStudentsByTeacherName(String teacher){
 
         return st.get(teacher);
 
 
     }
 
-    public ArrayList<String> getAllStudents(){
+    public List<String> getAllStudents(){
 
-        ArrayList<String>list = new ArrayList<>();
+        ArrayList<String> list = new ArrayList<>();
         for (String st : s.keySet()){
             list.add(st);
         }
